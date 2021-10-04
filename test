@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.openweathermap.org/surfreport/25&days=1",
+  "method": "GET"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  $("#surfheight").append(response.surfreport.conditions);
+});
+</script>
+</head>
+<body>
+<h2>Surf Height</h2>
+<div id="surfheight"></div>
+</body>
+</html>
